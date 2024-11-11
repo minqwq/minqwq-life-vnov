@@ -43,10 +43,10 @@ label start:
     u "抱歉，我还是没找到，能带我去吗？"
     m "...好吧。"
     hide mio
-    with fade
+    with dissolve
     "第一次被一个女生这样跟着，我的心嘭嘭直跳。"
     show mio p22
-    with fade
+    with dissolve
     m "好了，就是这里"
     u "谢谢~"
     hide mio

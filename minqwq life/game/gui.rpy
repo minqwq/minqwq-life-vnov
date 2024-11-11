@@ -10,6 +10,8 @@ init offset = -2
 ## 率）。
 init python:
     gui.init(1280, 720)
+# 如果你显示屏的分辨率比上面的分辨率还要低的话，就改成800, 600
+# 如果默认窗口大小太小的话，你可以改为1920, 1080
 
 ## 启用对屏幕或变换中无效或不稳定属性的检查
 define config.check_conflicting_properties = True
