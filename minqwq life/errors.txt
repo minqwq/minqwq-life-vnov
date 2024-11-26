@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 275: end of line expected.
-    show menubg.jpg
-               ^
+File "game/script.rpy", line 32: expected end of line
+    play music 8人形の森
+                ^
 
 Ren'Py Version: Ren'Py 8.3.2.24090902
-Tue Nov 12 05:15:22 2024
+Tue Nov 12 22:55:09 2024

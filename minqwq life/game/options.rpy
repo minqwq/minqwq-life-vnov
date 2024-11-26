@@ -1,4 +1,4 @@
-﻿## 此文件包含有可自定义您游戏的设置。
+## 此文件包含有可自定义您游戏的设置。
 ##
 ## 以“##”开头的语句是注释，您不应该对其取消注释。以“#”开头的语句是注释掉的代码，
 ## 在适用的时候您可能需要对其取消注释。
@@ -11,12 +11,12 @@
 ##
 ## 带有 _() 的字符串表示其可被翻译。
 
-define config.name = _("minqwq's life")
+define config.name = _("minqwq's life | Only in fancy, This is 'Gensokyo'.")
 
 
 ## 决定上面给出的标题是否显示在标题界面屏幕。设置为 False 来隐藏标题。
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## 游戏版本号。

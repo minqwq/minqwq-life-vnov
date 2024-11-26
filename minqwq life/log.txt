@@ -1,44 +1,193 @@
-2024-11-11 22:10:14 UTC
+2024-11-13 07:41:59 UTC
 Linux-4.14.186-perf-00243-g9a0d96109bda-aarch64-with-glibc2.36
 Ren'Py 8.3.2.24090902
 
-Early init took 0.38s
-Loading error handling took 0.14s
-Loading script took 0.72s
-Loading save slot metadata took 0.10s
+Early init took 0.64s
+Loading error handling took 0.16s
+Loading script took 0.77s
+Loading save slot metadata took 0.19s
 Loading persistent took 0.00s
-Running init code took 0.22s
-Loading analysis data took 0.05s
+Running init code took 0.30s
+Loading analysis data took 0.08s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.09s
 Index archives took 0.00s
-Dump and make backups took 0.22s
+Dump and make backups took 0.18s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc took 0.08s
+Initial gc took 0.11s
 DPI scale factor: 1.000000
 Creating interface object took 0.01s
 Cleaning stores took 0.00s
 Init translation took 0.09s
 Build styles took 0.01s
-Load screen analysis took 0.10s
+Load screen analysis took 0.09s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.23s
+Prepare screens took 0.16s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
-Running _start took 0.02s
-Interface start took 0.58s
+Running _start took 0.01s
+Interface start took 0.50s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1280, 720)
 swap interval: 1 frames
-Fullscreen mode.
+Windowed mode.
 Vendor: "b'Mesa/X.org'"
 Renderer: b'llvmpipe (LLVM 15.0.6, 128 bits)'
 Version: b'4.5 (Compatibility Profile) Mesa 22.3.6'
 Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(1280, 720)
-Maximum texture size: 4096x4096
 Screen sizes: virtual=(1280, 720) physical=(1099, 618) drawable=(1099, 618)
 Maximum texture size: 4096x4096
+Screen sizes: virtual=(1280, 720) physical=(1280, 654) drawable=(1280, 654)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 140, in script
+    show min p13 and saf p10
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/ast.py", line 1111, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/ast.py", line 1074, in show_imspec
+    renpy.config.show(name,
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/exports/displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/displayable.py", line 249, in _duplicate
+    args.extraneous()
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'min p13' does not accept attributes 'and saf p10'.
+
+While running game code:
+  File "game/script.rpy", line 140, in script
+    show min p13 and saf p10
+Exception: Image 'min p13' does not accept attributes 'and saf p10'.
+While handling exception:
+Traceback (most recent call last):
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/execution.py", line 599, in run
+    node.execute()
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/ast.py", line 1111, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/ast.py", line 1074, in show_imspec
+    renpy.config.show(name,
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/exports/displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/displayable.py", line 249, in _duplicate
+    args.extraneous()
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'min p13' does not accept attributes 'and saf p10'.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/error.py", line 140, in report_exception
+    renpy.game.invoke_in_new_context(
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/game.py", line 303, in invoke_in_new_context
+    return callable(*args, **kwargs)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/error.py", line 48, in call_exception_screen
+    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/core.py", line 2879, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/core.py", line 1381, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/screen.py", line 754, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 903, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 1454, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 1971, in render
+    cwidth, cheight = sizeit('c', width, height, 0, 0)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 1968, in sizeit
+    rend = renpy.display.render.render_for_size(pos_d[pos], width, height, st, at)
+  File "render.pyx", line 312, in renpy.display.render.render_for_size
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 1971, in render
+    cwidth, cheight = sizeit('c', width, height, 0, 0)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 1968, in sizeit
+    rend = renpy.display.render.render_for_size(pos_d[pos], width, height, st, at)
+  File "render.pyx", line 312, in renpy.display.render.render_for_size
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/viewport.py", line 285, in render
+    surf = renpy.display.render.render(self.child, child_width, child_height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/layout.py", line 1171, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/text/text.py", line 2540, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/text/text.py", line 770, in __init__
+    glyphs = ts.glyphs(s, self)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/text/text.py", line 340, in glyphs
+    fo = font.get_font(self.font, self.size, self.bold, self.italic, 0, self.antialias, self.vertical, self.hinting, layout.oversample, self.shaper, self.instance, self.axis)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/text/font.py", line 745, in get_font
+    face = load_face(fn, shaper)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/text/font.py", line 673, in load_face
+    raise Exception("Could not find font {0!r}.".format(orig_fn))
+Exception: Could not find font 'SourceHanSansLite.ttf'.
+
+Full traceback:
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/main.py", line 652, in main
+    run(restart)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/main.py", line 148, in run
+    renpy.execution.run_context(True)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/execution.py", line 958, in run_context
+    context.run()
+  File "game/script.rpy", line 140, in script
+    show min p13 and saf p10
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "game/script.rpy", line 140, in script
+    show min p13 and saf p10
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/ast.py", line 1111, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/ast.py", line 1074, in show_imspec
+    renpy.config.show(name,
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/exports/displayexports.py", line 477, in show
+    if not base.find_target() and renpy.config.missing_show:
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/image.py", line 421, in find_target
+    self.target = target._duplicate(a)
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/displayable.py", line 249, in _duplicate
+    args.extraneous()
+  File "/home/minqwq/renpy-8.3.2-sdkarm/renpy/display/displayable.py", line 109, in extraneous
+    raise Exception("Image '{}' does not accept attributes '{}'.".format(
+Exception: Image 'min p13' does not accept attributes 'and saf p10'.
+
+While running game code:
+  File "game/script.rpy", line 140, in script
+    show min p13 and saf p10
+  File "game/script.rpy", line 140, in script
+    show min p13 and saf p10
+Exception: Image 'min p13' does not accept attributes 'and saf p10'.
